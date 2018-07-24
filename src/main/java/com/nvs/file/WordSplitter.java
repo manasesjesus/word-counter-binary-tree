@@ -5,6 +5,7 @@ package com.nvs.file;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -18,22 +19,39 @@ import java.util.Scanner;
  *
  */
 public class WordSplitter {
-	private List<String> ignored_chars = Arrays.asList("(", ")", ",", ".", ";");
+	private List<String> ignored = new ArrayList<>();
+	private boolean ignore_case  = true;
 
 	/**
-	 * @return the ignored_chars
+	 * @return the ignored elements
 	 */
-	public List<String> getIgnored_chars() {
-		return ignored_chars;
+	public List<String> getIgnored() {
+		return ignored;
 	}
 
 	/**
-	 * Add one character to the ignored_chars
+	 * Add one element to be ignored 
 	 * 
-	 * @param char the character to be ignored
+	 * @param ignored The element to be ignored
 	 */
-	public void setIgnored_chars(String ignored_char) {
-		this.ignored_chars.add(ignored_char);
+	public void ignore (String ignored) {
+		this.ignored.add(ignored);
+	}
+	
+	/**
+	 * Add a list of elements to be ignored
+	 * 
+	 * @param ignored The elements to be ignored
+	 */
+	public void ignore (List<String> ignored) {
+		this.ignored.addAll(ignored);
+	}
+	
+	/**
+	 * @param ignore_case
+	 */
+	public void ignoreCase (boolean ignore_case) {
+		this.ignore_case = ignore_case;
 	}
 
 	/**
@@ -50,8 +68,12 @@ public class WordSplitter {
 
 		while (scanner.hasNext()) {
 			line = scanner.next().trim();
+			
+			if (ignore_case) {
+				line = line.toLowerCase();
+			}
 
-			for (String ic : ignored_chars) {
+			for (String ic : ignored) {
 				line = line.replace(ic, " ");
 			}
 
