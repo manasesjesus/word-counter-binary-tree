@@ -8,18 +8,18 @@ Finally, print the tree to the console (very basic output is sufficient).
 
 For example, the text “She had had to address address problems” results in this tree (note that there are multiple variants):
 
-![Gator Renter](resources/tree.png)
+![Word Counter Binary Tree](resources/tree.png)
 
 ### Solution
 
 
 Execution:
-`Tree filename.txt [elemenets_to_be_ignored ]`
+`Tree filename.txt [elements to be ignored]`
 
 Sample execution:
 
 ```
-$> Tree resources/test01.txt ( ) . , ; 
+$ Tree resources/test01.txt ( ) . , ; 
 
 7 
 ├──3 
