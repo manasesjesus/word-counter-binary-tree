@@ -1,4 +1,4 @@
-# Word Counter Binary Tree
+### Word Counter Binary Tree - Code challenge
 
 Write a Java-based program (command line) that reads text from a file, splits it into words at spaces and newline characters and constructs an (unbalanced) binary tree where each leaf node represents a unique word.
 
@@ -8,3 +8,26 @@ Finally, print the tree to the console (very basic output is sufficient).
 
 For example, the text “She had had to address address problems” results in this tree (note that there are multiple variants):
 
+![Gator Renter](resources/tree.png)
+
+### Solution
+
+
+Execution:
+`Tree filename.txt [elemenets_to_be_ignored ]`
+
+Sample execution:
+
+```
+$> Tree resources/test01.txt ( ) . , ; 
+
+7 
+├──3 
+│  ├──1  [ problems ] 
+│  └––2 
+│     ├──1  [ to ] 
+│     └––1  [ she ] 
+└––4 
+   ├──2  [ address ] 
+   └––2  [ had ] 
+```
