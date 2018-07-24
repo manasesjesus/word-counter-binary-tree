@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.nvs.file;
+package com.nvs.test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,6 +12,8 @@ import java.io.FileNotFoundException;
 
 import org.junit.jupiter.api.Test;
 
+import com.nvs.file.WordSplitter;
+
 /**
  * @author Manasés Jesús
  * @github manasesjesus
@@ -20,7 +22,7 @@ import org.junit.jupiter.api.Test;
 public class WordSplitterTest {
 
 	/**
-	 * Tests methods for {@link com.nvs.file.WordSplitter#getWordsCountFromFile(java.lang.String)}.
+	 * Tests methods for {@link com.nvs.test.WordSplitter#getWordsCountFromFile(java.lang.String)}.
 	 * @throws FileNotFoundException 
 	 */
 
