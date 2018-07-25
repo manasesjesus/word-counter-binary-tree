@@ -17,7 +17,7 @@ The application receives a filename as a parameter. It is then parsed to get the
 By default it is not case sensitive, but it is possible to call the WordSplitter ignoreCase method and set it to false.
 
 Execution: <br>
-`WordCounterBinaryTree  filename.txt [elements to be ignored]`
+`WordCounterBinaryTree  filename [elements to be ignored]`
 
 Sample execution and output 1:
 
