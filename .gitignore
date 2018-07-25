@@ -28,3 +28,4 @@ gradlew.bat
 .settings
 build
 gradle-wrapper.properties
+doc
