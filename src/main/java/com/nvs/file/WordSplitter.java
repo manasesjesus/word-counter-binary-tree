@@ -14,6 +14,12 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
+ * This class contains two attributes to be used when parsing a file. 
+ * One is a list of elements to be ignored, e.g. ( ) . ,
+ * The other is a flag to enable/disable the case sensitive. Useful 
+ * in languages, e.g. German, where nouns and verbs are differentiated  
+ * by a capital letter.
+ * 
  * @author Manasés Jesús
  * @github manasesjesus
  *
@@ -48,6 +54,8 @@ public class WordSplitter {
 	}
 	
 	/**
+	 * Set the flag to ignore uppercase vs. lowercase 
+	 * 
 	 * @param ignore_case
 	 */
 	public void ignoreCase (boolean ignore_case) {
@@ -55,9 +63,12 @@ public class WordSplitter {
 	}
 
 	/**
-	 * @param filename the name of the file
-	 * @return a sorted map containing the word counting
-	 * @throws FileNotFoundException
+	 * Receive the filename as a parameter and scan it by lines. If applicable, remove all unwanted elements.
+	 * Then construct a map with the words counting and sort it by number of occurrences. 
+	 * 
+	 * @param filename The name of the file to be parsed
+	 * @return a sorted map containing the words counting
+	 * @throws FileNotFoundException If the specified file doesn't exist
 	 */
 	@SuppressWarnings("resource")
 	public Map<String, Integer> getWordsCountFromFile(String filename) throws FileNotFoundException {
@@ -66,6 +77,7 @@ public class WordSplitter {
 		Map<String, Integer> words_count = new HashMap<>();
 		Scanner scanner = new Scanner(new File(filename)).useDelimiter("\n");
 
+		// Scan the file by lines, remove line breaks, remove unwanted elements and trim the lines
 		while (scanner.hasNext()) {
 			line = scanner.next().trim();
 			
@@ -80,11 +92,11 @@ public class WordSplitter {
 			words += line.trim() + " ";
 		}
 
+		// The file must contain at least one word in order to create the word counting sorted map
 		if (words != " ") {
 			Map<String, Integer> words_sorted = new LinkedHashMap<>();
 
 			Arrays.asList(words.split(" ")).forEach(word -> words_count.merge(word, 1, Integer::sum));
-
 			words_count.remove("");
 			words_count.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue())
 					.forEachOrdered(entry -> words_sorted.put(entry.getKey(), entry.getValue()));

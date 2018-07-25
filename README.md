@@ -12,14 +12,38 @@ For example, the text “She had had to address address problems” results in t
 
 ## Solution
 
+The application receives a filename as a parameter. It is then parsed to get the words and number of occurrences stored in a map which is used to build the tree. Optionally, elements to be ignored can be passed as parameters, e.g. `( ) . ,`
+
+By default it is not case sensitive, but it is possible to call the WordSplitter ignoreCase method and set it to false.
 
 Execution: <br>
-`Tree filename.txt [elements to be ignored]`
+`WordCounterBinaryTree  filename.txt [elements to be ignored]`
 
-Sample execution:
+Sample execution and output 1:
 
 ```
-$ Tree resources/test01.txt ( ) . , ; 
+$ WordCounterBinaryTree  resources/test01.txt  
+
+7
+├──4
+│  ├──1  [ address ]
+│  └––3
+│     ├──1  [ (had) ]
+│     └––2
+│        ├──1  [ she ]
+│        └––1  [ had, ]
+└––3
+   ├──1  [ (address); ]
+   └––2
+      ├──1  [ problems... ]
+      └––1  [ to ]
+```
+
+
+Sample execution and output 2:
+
+```
+$ WordCounterBinaryTree  resources/test01.txt ( ) . , ; 
 
 7 
 ├──3 
