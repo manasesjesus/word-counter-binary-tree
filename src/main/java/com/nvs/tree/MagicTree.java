@@ -74,8 +74,14 @@ public class MagicTree {
 			root.setLeft(parentL);
 			root.setRight(parentR);
 		} 
+		else if (words_count != null && !words_count.isEmpty())  {
+			// but there might be a case of a file containing the same word several times
+			// and the little magic seed wants to be printed
+			words_count.forEach((word, count) -> 
+				System.out.println("├── " +  words_count.get(word) + "  [ " + word + " ]"));
+		}
 		else {
-			System.err.println("Not enough words were found in the file");
+			System.err.println("No words were found in the file");
 		}
 	}
 
