@@ -63,7 +63,7 @@ public class Node {
         	String leaf = n.word == null ? "" : "  [ " + n.word + " ]";
         	String bstr = branch + (isLeft ? "│  " : "   "); 
         	
-            System.out.println(branch + (isLeft ? "├──" : isRoot ? "   " : "└––") + n.getWeight() + leaf);
+            System.out.println(branch + (isLeft ? "├──" : isRoot ? "   " : "└──") + n.getWeight() + leaf);
             print(bstr, n.getLeft(), true, false);
             print(bstr, n.getRight(), false, false);
         }
