@@ -93,7 +93,7 @@ public class WordSplitter {
 		}
 
 		// The file must contain at least one word in order to create the word counting sorted map
-		if (words != " ") {
+		if (!words.equals(" ")) {
 			Map<String, Integer> words_sorted = new LinkedHashMap<>();
 
 			Arrays.asList(words.split(" ")).forEach(word -> words_count.merge(word, 1, Integer::sum));
