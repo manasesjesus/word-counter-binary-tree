@@ -21,7 +21,7 @@ Execution: <br>
 
 Sample execution and output 1:
 
-```
+```shell
 $ WordCounterBinaryTree  resources/test01.txt  
 
 7
@@ -39,10 +39,9 @@ $ WordCounterBinaryTree  resources/test01.txt
       └––1  [ to ]
 ```
 
-
 Sample execution and output 2:
 
-```
+```shell
 $ WordCounterBinaryTree  resources/test01.txt ( ) . , ; 
 
 7 
