@@ -1,7 +1,5 @@
 ## Word Counter Binary Tree - Problem Description
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5b352dd0aed4428fbc6158982c872655)](https://app.codacy.com/app/manasesjesus/WordCounterBinaryTree?utm_source=github.com&utm_medium=referral&utm_content=manasesjesus/WordCounterBinaryTree&utm_campaign=Badge_Grade_Dashboard)
-
 Write a Java-based program (command line) that reads text from a file, splits it into words at spaces and newline characters and constructs an (unbalanced) binary tree where each leaf node represents a unique word.
 
 The tree construction shall start by creating a node for each unique word, where a node has a field to keep track of the occurrence count. The algorithm starts with the two least occurring nodes and creates a parent node. The parent node gets assigned an occurrence count that is the sum of the word occurrences. The process then repeats, i.e., it locates the two nodes with the least occurrence count, creates a parent node, and so on, until all nodes are part of the tree.
@@ -21,7 +19,9 @@ By default it is not case sensitive, but it is possible to call the WordSplitter
 Execution: <br>
 `WordCounterBinaryTree  filename [elements to be ignored]`
 
-Sample execution and output 1:
+## Examples
+
+Execution and output 1:
 
 ```shell
 $ WordCounterBinaryTree  resources/test01.txt  
@@ -41,7 +41,7 @@ $ WordCounterBinaryTree  resources/test01.txt
       └––1  [ to ]
 ```
 
-Sample execution and output 2:
+Execution and output 2:
 
 ```shell
 $ WordCounterBinaryTree  resources/test01.txt ( ) . , ; 
